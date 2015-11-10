@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		01089B471BF1A243005F7C5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01089B461BF1A243005F7C5F /* main.m */; };
 		01089B4A1BF1A243005F7C5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01089B491BF1A243005F7C5F /* AppDelegate.m */; };
-		01089B4D1BF1A243005F7C5F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01089B4C1BF1A243005F7C5F /* FirstViewController.m */; };
-		01089B501BF1A243005F7C5F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01089B4F1BF1A243005F7C5F /* SecondViewController.m */; };
+		01089B4D1BF1A243005F7C5F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01089B4C1BF1A243005F7C5F /* HomeViewController.m */; };
+		01089B501BF1A243005F7C5F /* PantryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01089B4F1BF1A243005F7C5F /* PantryViewController.m */; };
 		01089B531BF1A243005F7C5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01089B511BF1A243005F7C5F /* Main.storyboard */; };
 		01089B551BF1A243005F7C5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01089B541BF1A243005F7C5F /* Assets.xcassets */; };
 		01089B581BF1A243005F7C5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01089B561BF1A243005F7C5F /* LaunchScreen.storyboard */; };
@@ -40,10 +40,10 @@
 		01089B461BF1A243005F7C5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		01089B481BF1A243005F7C5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		01089B491BF1A243005F7C5F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		01089B4B1BF1A243005F7C5F /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		01089B4C1BF1A243005F7C5F /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		01089B4E1BF1A243005F7C5F /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		01089B4F1BF1A243005F7C5F /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		01089B4B1BF1A243005F7C5F /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		01089B4C1BF1A243005F7C5F /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		01089B4E1BF1A243005F7C5F /* PantryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PantryViewController.h; sourceTree = "<group>"; };
+		01089B4F1BF1A243005F7C5F /* PantryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PantryViewController.m; sourceTree = "<group>"; };
 		01089B521BF1A243005F7C5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01089B541BF1A243005F7C5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01089B571BF1A243005F7C5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,10 +106,10 @@
 			children = (
 				01089B481BF1A243005F7C5F /* AppDelegate.h */,
 				01089B491BF1A243005F7C5F /* AppDelegate.m */,
-				01089B4B1BF1A243005F7C5F /* FirstViewController.h */,
-				01089B4C1BF1A243005F7C5F /* FirstViewController.m */,
-				01089B4E1BF1A243005F7C5F /* SecondViewController.h */,
-				01089B4F1BF1A243005F7C5F /* SecondViewController.m */,
+				01089B4B1BF1A243005F7C5F /* HomeViewController.h */,
+				01089B4C1BF1A243005F7C5F /* HomeViewController.m */,
+				01089B4E1BF1A243005F7C5F /* PantryViewController.h */,
+				01089B4F1BF1A243005F7C5F /* PantryViewController.m */,
 				01089B511BF1A243005F7C5F /* Main.storyboard */,
 				01089B541BF1A243005F7C5F /* Assets.xcassets */,
 				01089B561BF1A243005F7C5F /* LaunchScreen.storyboard */,
@@ -275,9 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01089B501BF1A243005F7C5F /* SecondViewController.m in Sources */,
+				01089B501BF1A243005F7C5F /* PantryViewController.m in Sources */,
 				01089B4A1BF1A243005F7C5F /* AppDelegate.m in Sources */,
-				01089B4D1BF1A243005F7C5F /* FirstViewController.m in Sources */,
+				01089B4D1BF1A243005F7C5F /* HomeViewController.m in Sources */,
 				01089B471BF1A243005F7C5F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +504,7 @@
 				01089B741BF1A243005F7C5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01089B751BF1A243005F7C5F /* Build configuration list for PBXNativeTarget "MyKitchenTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +513,7 @@
 				01089B771BF1A243005F7C5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01089B781BF1A243005F7C5F /* Build configuration list for PBXNativeTarget "MyKitchenUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +522,7 @@
 				01089B7A1BF1A243005F7C5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

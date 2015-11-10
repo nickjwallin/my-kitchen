@@ -1,18 +1,18 @@
 //
-//  SecondViewController.m
+//  PantryViewController.m
 //  MyKitchen
 //
 //  Created by Nicholas Wallin on 11/9/15.
 //  Copyright © 2015 Nicholas J. Wallin. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "PantryViewController.h"
 
-@interface SecondViewController ()
+@interface PantryViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation PantryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

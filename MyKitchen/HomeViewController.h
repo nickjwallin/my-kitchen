@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  HomeViewController.h
 //  MyKitchen
 //
 //  Created by Nicholas Wallin on 11/9/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface HomeViewController : UIViewController
 
 
 @end

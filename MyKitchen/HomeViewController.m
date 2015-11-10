@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  HomeViewController.m
 //  MyKitchen
 //
 //  Created by Nicholas Wallin on 11/9/15.
 //  Copyright © 2015 Nicholas J. Wallin. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "HomeViewController.h"
 
-@interface FirstViewController ()
+@interface HomeViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

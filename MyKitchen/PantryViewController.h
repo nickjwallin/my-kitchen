@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  PantryViewController.h
 //  MyKitchen
 //
 //  Created by Nicholas Wallin on 11/9/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface PantryViewController : UIViewController
 
 
 @end

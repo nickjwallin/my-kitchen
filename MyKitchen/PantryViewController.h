@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PantryViewController : UIViewController
+@interface PantryViewController : UINavigationController
 
 
 @end

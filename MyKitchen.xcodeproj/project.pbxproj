@@ -16,6 +16,7 @@
 		01089B581BF1A243005F7C5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01089B561BF1A243005F7C5F /* LaunchScreen.storyboard */; };
 		01089B631BF1A243005F7C5F /* MyKitchenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01089B621BF1A243005F7C5F /* MyKitchenTests.m */; };
 		01089B6E1BF1A243005F7C5F /* MyKitchenUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01089B6D1BF1A243005F7C5F /* MyKitchenUITests.m */; };
+		01988A5D1BF27EB100B0762F /* AddIngredientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988A5C1BF27EB100B0762F /* AddIngredientViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		01089B691BF1A243005F7C5F /* MyKitchenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyKitchenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01089B6D1BF1A243005F7C5F /* MyKitchenUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyKitchenUITests.m; sourceTree = "<group>"; };
 		01089B6F1BF1A243005F7C5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01988A5B1BF27EB100B0762F /* AddIngredientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddIngredientViewController.h; sourceTree = "<group>"; };
+		01988A5C1BF27EB100B0762F /* AddIngredientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddIngredientViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 			children = (
 				01089B481BF1A243005F7C5F /* AppDelegate.h */,
 				01089B491BF1A243005F7C5F /* AppDelegate.m */,
+				01988A5B1BF27EB100B0762F /* AddIngredientViewController.h */,
+				01988A5C1BF27EB100B0762F /* AddIngredientViewController.m */,
 				01089B4B1BF1A243005F7C5F /* HomeViewController.h */,
 				01089B4C1BF1A243005F7C5F /* HomeViewController.m */,
 				01089B4E1BF1A243005F7C5F /* PantryViewController.h */,
@@ -277,6 +282,7 @@
 			files = (
 				01089B501BF1A243005F7C5F /* PantryViewController.m in Sources */,
 				01089B4A1BF1A243005F7C5F /* AppDelegate.m in Sources */,
+				01988A5D1BF27EB100B0762F /* AddIngredientViewController.m in Sources */,
 				01089B4D1BF1A243005F7C5F /* HomeViewController.m in Sources */,
 				01089B471BF1A243005F7C5F /* main.m in Sources */,
 			);

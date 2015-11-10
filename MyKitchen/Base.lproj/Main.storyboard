@@ -75,12 +75,59 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Pantry" id="2Fc-jp-cUi">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pg6-SE-H5s"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pg6-SE-H5s">
+                            <connections>
+                                <segue destination="6QL-lS-0pp" kind="presentation" id="5bh-En-j4d"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zB-Vi-6cE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1548" y="399"/>
+        </scene>
+        <!--Add Ingredient Navigation Controller-->
+        <scene sceneID="UcX-c9-3zD">
+            <objects>
+                <navigationController title="Add Ingredient Navigation Controller" id="6QL-lS-0pp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qc9-ak-uyv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pV4-Ov-cKo" kind="relationship" relationship="rootViewController" id="CZY-t4-gbL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zak-nJ-Jdw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2294" y="399"/>
+        </scene>
+        <!--Add Ingredient to Pantry-->
+        <scene sceneID="uyl-x9-Spv">
+            <objects>
+                <viewController id="pV4-Ov-cKo" customClass="AddIngredientViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pue-Sv-766"/>
+                        <viewControllerLayoutGuide type="bottom" id="KPO-1d-0m2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bBu-ro-ylD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Ingredient to Pantry" id="PNL-he-hUA">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Cd6-ia-9TS">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="pV4-Ov-cKo" id="WGL-mz-1ni"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hbd-rI-l1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3042" y="399"/>
         </scene>
         <!--Pantry Navigation Controller-->
         <scene sceneID="pXm-bj-I5T">

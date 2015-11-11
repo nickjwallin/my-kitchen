@@ -54,16 +54,7 @@
 }
 
 - (IBAction)addButtonTapped:(id)sender {
-    NSManagedObjectContext *context = [self managedObjectContext];
-    NSManagedObject *newRecipe = [NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:context];
-    // TODO: error checking (no value provided)
-    [newRecipe setValue:self.nameTextField.text forKey:@"name"];
-
-    NSError *error = nil;
-    if (![context save:&error]) {
-        NSLog(@"error calling save: -- %@, %@", error, [error localizedDescription]);
-    }
-    
+    [self saveRecipeToCoreData];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -98,6 +89,34 @@
 }
 
 #pragma mark - Core Data
+
+- (void)saveRecipeToCoreData {
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSManagedObject *newRecipe = [NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:context];
+
+    // TODO: error checking (no value provided)
+    NSString *recipeName = self.nameTextField.text;
+    [newRecipe setValue:recipeName forKey:@"name"];
+
+    NSMutableSet *recipeIngredients = [newRecipe mutableSetValueForKey:@"ingredients"];
+
+    for (NSDictionary *ingredient in self.recipeIngredients) {
+        NSManagedObject *newIngredient = [NSEntityDescription insertNewObjectForEntityForName:@"RecipeIngredient" inManagedObjectContext:context];
+
+        [newIngredient setValue:recipeName forKey:@"recipeName"];
+        NSString *name = [[ingredient allKeys] firstObject];
+        NSNumber *amount = [ingredient valueForKey:name];
+        [newIngredient setValue:name forKey:@"name"];
+        [newIngredient setValue:amount forKey:@"amount"];
+
+        [recipeIngredients addObject:newIngredient];
+    }
+
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"error calling save: -- %@, %@", error, [error localizedDescription]);
+    }
+}
 
 - (NSManagedObjectContext *)managedObjectContext {
     NSManagedObjectContext *context = nil;

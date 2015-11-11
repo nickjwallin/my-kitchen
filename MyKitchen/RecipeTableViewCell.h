@@ -12,6 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *recipeLabel;
 
-- (void)setLabelWithName:(NSString *)name;
+- (void)setLabelWithName:(NSString *)name withNumIngredients:(NSNumber *)numIngredients;
 
 @end

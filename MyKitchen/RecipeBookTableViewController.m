@@ -51,7 +51,8 @@
     RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell" forIndexPath:indexPath];
     
     NSManagedObject *recipe = [self.recipes objectAtIndex:indexPath.row];
-    [cell setLabelWithName:[recipe valueForKey:@"name"]];
+    NSMutableSet *recipeIngredients = [recipe mutableSetValueForKey:@"ingredients"];
+    [cell setLabelWithName:[recipe valueForKey:@"name"] withNumIngredients:[NSNumber numberWithInteger:recipeIngredients.count]];
     
     return cell;
 }

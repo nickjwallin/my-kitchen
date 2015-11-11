@@ -10,8 +10,8 @@
 
 @implementation RecipeTableViewCell
 
-- (void)setLabelWithName:(NSString *)name {
-    [self.recipeLabel setText:name];
+- (void)setLabelWithName:(NSString *)name withNumIngredients:(NSNumber *)numIngredients {
+    [self.recipeLabel setText:[NSString stringWithFormat:@"%@ (%@ ingredients)", name, numIngredients]];
 }
 
 @end

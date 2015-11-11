@@ -349,7 +349,7 @@
                                 <animations/>
                                 <state key="normal" title="Add Ingredient"/>
                                 <connections>
-                                    <segue destination="KCx-0S-kOf" kind="presentation" id="83r-Rb-PLg"/>
+                                    <segue destination="KCx-0S-kOf" kind="presentation" identifier="AddRecipeIngredientSegue" id="83r-Rb-PLg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -383,6 +383,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="vxv-SY-5U4" id="xEK-B6-5Xy"/>
+                        <outlet property="tableView" destination="6m6-yF-wix" id="N4c-ES-VVX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVV-1m-1mF" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -39,5 +39,8 @@
 }
 
 - (IBAction)addButtonTapped:(id)sender {
+    [self.delegate addRecipeIngredientWithAmount:[NSNumber numberWithInt:self.amountTextField.text.intValue]
+                                        withName:self.nameTextField.text];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

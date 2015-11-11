@@ -8,16 +8,26 @@
 
 #import "AddRecipeViewController.h"
 #import "IngredientTableViewCell.h"
+#import "AddRecipeIngredientViewController.h"
 
-@interface AddRecipeViewController ()
+@interface AddRecipeViewController () <AddRecipeIngredientProtocol>
 
 @property (strong) NSMutableArray *recipeIngredients;
+
 @end
 
 @implementation AddRecipeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
+    self.recipeIngredients = [[NSMutableArray alloc] init];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,15 +35,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"AddRecipeIngredientSegue"]) {
+        UINavigationController *addRecipeIngredientNavController = [segue destinationViewController];
+        AddRecipeIngredientViewController *addRecipeIngredientVC = [addRecipeIngredientNavController.childViewControllers firstObject];
+        addRecipeIngredientVC.delegate = self;
+    }
 }
-*/
+
+#pragma mark - Actions
 
 - (IBAction)cancelButtonTapped:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -60,18 +74,27 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //return self.recipeIngredients.count;
-    return 3;
+    return self.recipeIngredients.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     IngredientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeIngredientCell" forIndexPath:indexPath];
-
-    //NSManagedObject *ingredient = [self.recipeIngredients objectAtIndex:indexPath.row];
-    //[cell setLabelWithAmount:[ingredient valueForKey:@"amount"] withName:[ingredient valueForKey:@"name"]];
-    [cell setLabelWithAmount:@5 withName:@"veggies"];
+    
+    NSDictionary *ingredient = [self.recipeIngredients objectAtIndex:indexPath.row];
+    NSString *name = [[ingredient allKeys] firstObject];
+    NSNumber *amount = [ingredient valueForKey:name];
+    [cell setLabelWithAmount:amount withName:name];
 
     return cell;
+}
+
+#pragma mark - AddRecipeIngredientProtocol
+
+-(void)addRecipeIngredientWithAmount:(NSNumber *)amount withName:(NSString *)name {
+    if (amount && name) {
+        NSDictionary *ingredient = [[NSDictionary alloc] initWithObjects:@[amount] forKeys:@[name]];
+        [self.recipeIngredients addObject:ingredient];
+    }
 }
 
 #pragma mark - Core Data

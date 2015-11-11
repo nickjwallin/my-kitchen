@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol AddRecipeIngredientProtocol <NSObject>
+
+- (void)addRecipeIngredientWithAmount:(NSNumber *)amount withName:(NSString *)name;
+
+@end
+
 @interface AddRecipeIngredientViewController : UIViewController
 
 - (IBAction)cancelButtonTapped:(id)sender;
@@ -16,4 +22,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 
+@property (weak, nonatomic) id <AddRecipeIngredientProtocol> delegate;
+
 @end
+
+

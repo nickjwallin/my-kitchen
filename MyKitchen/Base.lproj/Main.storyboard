@@ -204,6 +204,82 @@
             </objects>
             <point key="canvasLocation" x="3042" y="399"/>
         </scene>
+        <!--Add Recipe Ingredient Navigation Controller-->
+        <scene sceneID="ejJ-iK-QAD">
+            <objects>
+                <navigationController title="Add Recipe Ingredient Navigation Controller" id="KCx-0S-kOf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bg6-aT-JZt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="t8I-VA-2hd" kind="relationship" relationship="rootViewController" id="cdb-NX-Odz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rlJ-km-XKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3760" y="1116"/>
+        </scene>
+        <!--Add Ingredient to Recipe-->
+        <scene sceneID="8O3-VW-JsG">
+            <objects>
+                <viewController title="Add Ingredient to Recipe" id="t8I-VA-2hd" customClass="AddRecipeIngredientViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m5W-Tc-rrg"/>
+                        <viewControllerLayoutGuide type="bottom" id="qhc-oa-rUg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p97-Wy-VOC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingredient Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mUH-OC-WmI">
+                                <rect key="frame" x="108" y="84" width="472" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dgb-Bp-IbY">
+                                <rect key="frame" x="20" y="84" width="80" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="BeH-Wv-qbR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mUH-OC-WmI" firstAttribute="leading" secondItem="dgb-Bp-IbY" secondAttribute="trailing" constant="8" id="LGq-4B-3sd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mUH-OC-WmI" secondAttribute="trailing" id="bsT-BR-9jz"/>
+                            <constraint firstItem="mUH-OC-WmI" firstAttribute="top" secondItem="m5W-Tc-rrg" secondAttribute="bottom" constant="20" id="d5h-sk-xmr"/>
+                            <constraint firstItem="dgb-Bp-IbY" firstAttribute="top" secondItem="m5W-Tc-rrg" secondAttribute="bottom" constant="20" id="kpB-oR-63Q"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="dgb-Bp-IbY" secondAttribute="leading" id="wY6-ac-jTu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Ingredient to Recipe" id="zmI-Yz-fK8">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aYK-32-S29">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="t8I-VA-2hd" id="8S9-Dz-dp2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="uIe-oG-Ri0">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="t8I-VA-2hd" id="Vyj-h5-wnE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="amountTextField" destination="dgb-Bp-IbY" id="oRV-ef-An3"/>
+                        <outlet property="nameTextField" destination="mUH-OC-WmI" id="hyv-tB-JbV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vbi-2w-eay" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4468" y="1116"/>
+        </scene>
         <!--Add Recipe To Book-->
         <scene sceneID="7lH-hS-8Xe">
             <objects>
@@ -238,6 +314,9 @@
                                 <rect key="frame" x="479" y="130" width="101" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Add Ingredient"/>
+                                <connections>
+                                    <segue destination="KCx-0S-kOf" kind="presentation" id="83r-Rb-PLg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>

@@ -23,6 +23,7 @@
 		01988AAB1BF2F29500B0762F /* AddRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988AAA1BF2F29500B0762F /* AddRecipeViewController.m */; };
 		01988AAE1BF3AA3E00B0762F /* RecipeBookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988AAD1BF3AA3E00B0762F /* RecipeBookTableViewController.m */; };
 		01988AB11BF3AB1D00B0762F /* RecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988AB01BF3AB1D00B0762F /* RecipeTableViewCell.m */; };
+		01988AB41BF3B1FB00B0762F /* AddRecipeIngredientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988AB31BF3B1FB00B0762F /* AddRecipeIngredientViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		01988AAD1BF3AA3E00B0762F /* RecipeBookTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeBookTableViewController.m; sourceTree = "<group>"; };
 		01988AAF1BF3AB1D00B0762F /* RecipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewCell.h; sourceTree = "<group>"; };
 		01988AB01BF3AB1D00B0762F /* RecipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTableViewCell.m; sourceTree = "<group>"; };
+		01988AB21BF3B1FB00B0762F /* AddRecipeIngredientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRecipeIngredientViewController.h; sourceTree = "<group>"; };
+		01988AB31BF3B1FB00B0762F /* AddRecipeIngredientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecipeIngredientViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				01988A5C1BF27EB100B0762F /* AddIngredientViewController.m */,
 				01988AA91BF2F29500B0762F /* AddRecipeViewController.h */,
 				01988AAA1BF2F29500B0762F /* AddRecipeViewController.m */,
+				01988AB21BF3B1FB00B0762F /* AddRecipeIngredientViewController.h */,
+				01988AB31BF3B1FB00B0762F /* AddRecipeIngredientViewController.m */,
 				01089B4B1BF1A243005F7C5F /* HomeViewController.h */,
 				01089B4C1BF1A243005F7C5F /* HomeViewController.m */,
 				01988AA61BF2B11D00B0762F /* IngredientTableViewCell.h */,
@@ -315,6 +320,7 @@
 				01988A5D1BF27EB100B0762F /* AddIngredientViewController.m in Sources */,
 				01089B4D1BF1A243005F7C5F /* HomeViewController.m in Sources */,
 				01988AAE1BF3AA3E00B0762F /* RecipeBookTableViewController.m in Sources */,
+				01988AB41BF3B1FB00B0762F /* AddRecipeIngredientViewController.m in Sources */,
 				01988AB11BF3AB1D00B0762F /* RecipeTableViewCell.m in Sources */,
 				01988A601BF2850900B0762F /* MyKitchen.xcdatamodeld in Sources */,
 				01988AA51BF2AC3300B0762F /* PantryTableViewController.m in Sources */,

@@ -39,6 +39,17 @@
 }
 
 - (IBAction)addButtonTapped:(id)sender {
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSManagedObject *newRecipe = [NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:context];
+    // TODO: error checking (no value provided)
+    [newRecipe setValue:self.nameTextField.text forKey:@"name"];
+
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"error calling save: -- %@, %@", error, [error localizedDescription]);
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Core Data

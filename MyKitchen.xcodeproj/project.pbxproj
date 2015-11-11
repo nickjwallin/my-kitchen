@@ -21,6 +21,8 @@
 		01988AA51BF2AC3300B0762F /* PantryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988AA41BF2AC3300B0762F /* PantryTableViewController.m */; };
 		01988AA81BF2B11D00B0762F /* IngredientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988AA71BF2B11D00B0762F /* IngredientTableViewCell.m */; };
 		01988AAB1BF2F29500B0762F /* AddRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988AAA1BF2F29500B0762F /* AddRecipeViewController.m */; };
+		01988AAE1BF3AA3E00B0762F /* RecipeBookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988AAD1BF3AA3E00B0762F /* RecipeBookTableViewController.m */; };
+		01988AB11BF3AB1D00B0762F /* RecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988AB01BF3AB1D00B0762F /* RecipeTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,10 @@
 		01988AA71BF2B11D00B0762F /* IngredientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientTableViewCell.m; sourceTree = "<group>"; };
 		01988AA91BF2F29500B0762F /* AddRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRecipeViewController.h; sourceTree = "<group>"; };
 		01988AAA1BF2F29500B0762F /* AddRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecipeViewController.m; sourceTree = "<group>"; };
+		01988AAC1BF3AA3E00B0762F /* RecipeBookTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeBookTableViewController.h; sourceTree = "<group>"; };
+		01988AAD1BF3AA3E00B0762F /* RecipeBookTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeBookTableViewController.m; sourceTree = "<group>"; };
+		01988AAF1BF3AB1D00B0762F /* RecipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewCell.h; sourceTree = "<group>"; };
+		01988AB01BF3AB1D00B0762F /* RecipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,10 @@
 				01988AA41BF2AC3300B0762F /* PantryTableViewController.m */,
 				01089B4E1BF1A243005F7C5F /* PantryViewController.h */,
 				01089B4F1BF1A243005F7C5F /* PantryViewController.m */,
+				01988AAC1BF3AA3E00B0762F /* RecipeBookTableViewController.h */,
+				01988AAD1BF3AA3E00B0762F /* RecipeBookTableViewController.m */,
+				01988AAF1BF3AB1D00B0762F /* RecipeTableViewCell.h */,
+				01988AB01BF3AB1D00B0762F /* RecipeTableViewCell.m */,
 				01089B511BF1A243005F7C5F /* Main.storyboard */,
 				01089B541BF1A243005F7C5F /* Assets.xcassets */,
 				01089B561BF1A243005F7C5F /* LaunchScreen.storyboard */,
@@ -304,6 +314,8 @@
 				01089B4A1BF1A243005F7C5F /* AppDelegate.m in Sources */,
 				01988A5D1BF27EB100B0762F /* AddIngredientViewController.m in Sources */,
 				01089B4D1BF1A243005F7C5F /* HomeViewController.m in Sources */,
+				01988AAE1BF3AA3E00B0762F /* RecipeBookTableViewController.m in Sources */,
+				01988AB11BF3AB1D00B0762F /* RecipeTableViewCell.m in Sources */,
 				01988A601BF2850900B0762F /* MyKitchen.xcdatamodeld in Sources */,
 				01988AA51BF2AC3300B0762F /* PantryTableViewController.m in Sources */,
 				01089B471BF1A243005F7C5F /* main.m in Sources */,

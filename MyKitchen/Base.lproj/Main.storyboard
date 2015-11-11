@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Home-->
@@ -51,22 +52,40 @@
         <!--Pantry Table View Controller-->
         <scene sceneID="MZN-ip-HnP">
             <objects>
-                <tableViewController title="Pantry Table View Controller" id="if8-1j-NVQ" sceneMemberID="viewController">
+                <tableViewController title="Pantry Table View Controller" id="if8-1j-NVQ" customClass="PantryTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fY2-29-5DF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ISY-6x-utl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientCell" id="ISY-6x-utl" customClass="IngredientTableViewCell">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ISY-6x-utl" id="9Cl-uh-lsc">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Cd-tc-UTN" userLabel="IngredientLabel">
+                                            <rect key="frame" x="8" y="11" width="584" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="9Cd-tc-UTN" firstAttribute="top" secondItem="9Cl-uh-lsc" secondAttribute="topMargin" constant="3" id="1o7-Qj-sxn"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="9Cd-tc-UTN" secondAttribute="trailing" id="8at-NR-yWI"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="9Cd-tc-UTN" secondAttribute="leading" id="ETG-eR-j4D"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="9Cd-tc-UTN" secondAttribute="bottom" constant="3" id="jzL-GI-1HL"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="ingredientLabel" destination="9Cd-tc-UTN" id="L7g-Ar-TzN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -114,8 +133,38 @@
                     <view key="view" contentMode="scaleToFill" id="bBu-ro-ylD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingredient Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IwS-MP-23U">
+                                <rect key="frame" x="108" y="84" width="472" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l0Y-N8-38m">
+                                <rect key="frame" x="20" y="84" width="80" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="9Es-AH-w5g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="IwS-MP-23U" secondAttribute="trailing" id="NJt-DQ-yW1"/>
+                            <constraint firstItem="l0Y-N8-38m" firstAttribute="top" secondItem="Pue-Sv-766" secondAttribute="bottom" constant="20" id="V4P-jH-jYu"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="l0Y-N8-38m" secondAttribute="leading" id="cAK-oo-NMa"/>
+                            <constraint firstItem="IwS-MP-23U" firstAttribute="top" secondItem="Pue-Sv-766" secondAttribute="bottom" constant="20" id="gjr-nZ-2lb"/>
+                            <constraint firstItem="l0Y-N8-38m" firstAttribute="top" secondItem="IwS-MP-23U" secondAttribute="bottom" constant="8" id="qZp-Ob-KxG"/>
+                            <constraint firstItem="IwS-MP-23U" firstAttribute="leading" secondItem="l0Y-N8-38m" secondAttribute="trailing" constant="8" id="rBm-Aq-9ec"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="qZp-Ob-KxG"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Add Ingredient to Pantry" id="PNL-he-hUA">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Cd6-ia-9TS">
@@ -123,7 +172,16 @@
                                 <action selector="cancelButtonTapped:" destination="pV4-Ov-cKo" id="WGL-mz-1ni"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="Bnh-yz-L6L">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="pV4-Ov-cKo" id="g9q-hf-TJ8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="amountTextField" destination="l0Y-N8-38m" id="660-z1-UkB"/>
+                        <outlet property="nameTextField" destination="IwS-MP-23U" id="mzs-fh-qK5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbd-rI-l1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

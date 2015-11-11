@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface AddIngredientViewController : UIViewController
 
 - (IBAction)cancelButtonTapped:(id)sender;
+- (IBAction)addButtonTapped:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITextField *amountTextField;
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 
 @end

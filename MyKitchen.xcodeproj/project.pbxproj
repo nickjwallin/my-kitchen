@@ -20,6 +20,7 @@
 		01988A601BF2850900B0762F /* MyKitchen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01988A5E1BF2850900B0762F /* MyKitchen.xcdatamodeld */; };
 		01988AA51BF2AC3300B0762F /* PantryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988AA41BF2AC3300B0762F /* PantryTableViewController.m */; };
 		01988AA81BF2B11D00B0762F /* IngredientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988AA71BF2B11D00B0762F /* IngredientTableViewCell.m */; };
+		01988AAB1BF2F29500B0762F /* AddRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988AAA1BF2F29500B0762F /* AddRecipeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		01988AA41BF2AC3300B0762F /* PantryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PantryTableViewController.m; sourceTree = "<group>"; };
 		01988AA61BF2B11D00B0762F /* IngredientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientTableViewCell.h; sourceTree = "<group>"; };
 		01988AA71BF2B11D00B0762F /* IngredientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientTableViewCell.m; sourceTree = "<group>"; };
+		01988AA91BF2F29500B0762F /* AddRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRecipeViewController.h; sourceTree = "<group>"; };
+		01988AAA1BF2F29500B0762F /* AddRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecipeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				01089B491BF1A243005F7C5F /* AppDelegate.m */,
 				01988A5B1BF27EB100B0762F /* AddIngredientViewController.h */,
 				01988A5C1BF27EB100B0762F /* AddIngredientViewController.m */,
+				01988AA91BF2F29500B0762F /* AddRecipeViewController.h */,
+				01988AAA1BF2F29500B0762F /* AddRecipeViewController.m */,
 				01089B4B1BF1A243005F7C5F /* HomeViewController.h */,
 				01089B4C1BF1A243005F7C5F /* HomeViewController.m */,
 				01988AA61BF2B11D00B0762F /* IngredientTableViewCell.h */,
@@ -295,6 +300,7 @@
 			files = (
 				01988AA81BF2B11D00B0762F /* IngredientTableViewCell.m in Sources */,
 				01089B501BF1A243005F7C5F /* PantryViewController.m in Sources */,
+				01988AAB1BF2F29500B0762F /* AddRecipeViewController.m in Sources */,
 				01089B4A1BF1A243005F7C5F /* AppDelegate.m in Sources */,
 				01988A5D1BF27EB100B0762F /* AddIngredientViewController.m in Sources */,
 				01089B4D1BF1A243005F7C5F /* HomeViewController.m in Sources */,

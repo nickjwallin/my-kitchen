@@ -207,7 +207,7 @@
         <!--Add Recipe To Book-->
         <scene sceneID="7lH-hS-8Xe">
             <objects>
-                <viewController title="Add Recipe To Book" id="tK9-gN-XfS" sceneMemberID="viewController">
+                <viewController title="Add Recipe To Book" id="tK9-gN-XfS" customClass="AddRecipeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xj8-Jy-Be5"/>
                         <viewControllerLayoutGuide type="bottom" id="fWg-JZ-BQs"/>
@@ -257,9 +257,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Recipe to Book" id="SIx-jB-Exx">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ili-tR-xdW"/>
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="KAZ-2n-IdM"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ili-tR-xdW">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="tK9-gN-XfS" id="66j-1W-waP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="KAZ-2n-IdM">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="tK9-gN-XfS" id="mTw-eB-MsD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="vxv-SY-5U4" id="xEK-B6-5Xy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVV-1m-1mF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

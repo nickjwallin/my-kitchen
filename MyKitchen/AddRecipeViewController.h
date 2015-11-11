@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface AddRecipeViewController : UIViewController
+@interface AddRecipeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 - (IBAction)cancelButtonTapped:(id)sender;
 - (IBAction)addButtonTapped:(id)sender;

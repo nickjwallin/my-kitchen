@@ -309,6 +309,40 @@
                                 <rect key="frame" x="20" y="163" width="560" height="417"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeIngredientCell" id="EyP-dl-sSJ" customClass="IngredientTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EyP-dl-sSJ" id="aAL-E6-hj1">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Ingredient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9d-p7-9TW">
+                                                    <rect key="frame" x="8" y="11" width="544" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="e9d-p7-9TW" secondAttribute="bottom" constant="3" id="5Fh-Pg-haN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="e9d-p7-9TW" secondAttribute="trailing" id="ByA-ke-3wd"/>
+                                                <constraint firstItem="e9d-p7-9TW" firstAttribute="top" secondItem="aAL-E6-hj1" secondAttribute="topMargin" constant="3" id="WgT-am-r00"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="e9d-p7-9TW" secondAttribute="leading" id="kkR-pD-LcJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="ingredientLabel" destination="e9d-p7-9TW" id="EJ3-T5-X6u"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="tK9-gN-XfS" id="AsJ-ps-L5b"/>
+                                    <outlet property="delegate" destination="tK9-gN-XfS" id="Rwr-nY-KQl"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4E-pl-rFb">
                                 <rect key="frame" x="479" y="130" width="101" height="30"/>

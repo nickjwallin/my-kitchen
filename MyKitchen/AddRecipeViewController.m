@@ -7,16 +7,17 @@
 //
 
 #import "AddRecipeViewController.h"
+#import "IngredientTableViewCell.h"
 
 @interface AddRecipeViewController ()
 
+@property (strong) NSMutableArray *recipeIngredients;
 @end
 
 @implementation AddRecipeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,6 +51,27 @@
     }
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    //return self.recipeIngredients.count;
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    IngredientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeIngredientCell" forIndexPath:indexPath];
+
+    //NSManagedObject *ingredient = [self.recipeIngredients objectAtIndex:indexPath.row];
+    //[cell setLabelWithAmount:[ingredient valueForKey:@"amount"] withName:[ingredient valueForKey:@"name"]];
+    [cell setLabelWithAmount:@5 withName:@"veggies"];
+
+    return cell;
 }
 
 #pragma mark - Core Data

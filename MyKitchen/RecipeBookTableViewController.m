@@ -9,7 +9,7 @@
 #import "RecipeBookTableViewController.h"
 #import "RecipeTableViewCell.h"
 
-@interface RecipeBookTableViewController ()
+@interface RecipeBookTableViewController () <MakeRecipeProtocol>
 
 @property (strong) NSMutableArray *recipes;
 
@@ -49,6 +49,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell" forIndexPath:indexPath];
+    cell.rowIndex = indexPath.row;
+    cell.delegate = self;
     
     NSManagedObject *recipe = [self.recipes objectAtIndex:indexPath.row];
     NSMutableSet *recipeIngredients = [recipe mutableSetValueForKey:@"ingredients"];
@@ -66,6 +68,27 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - MakeRecipeProtocol
+
+- (void)makeButtonTappedForCellAtIndex:(NSInteger)index {
+    NSManagedObject *recipe = [self.recipes objectAtIndex:index];
+    NSString *recipeName = [recipe valueForKey:@"name"];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"Make %@?", recipeName]
+                                                                   message:@"This will subtract ingredients from the pantry."
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {
+                                                         // make the recipe!
+                                                     }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+    [alert addAction:okAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
 #pragma mark - Core Data
 

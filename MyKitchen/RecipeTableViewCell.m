@@ -14,4 +14,8 @@
     [self.recipeLabel setText:[NSString stringWithFormat:@"%@ (%@ ingredients)", name, numIngredients]];
 }
 
+- (IBAction)makeButtonTapped:(id)sender {
+    [self.delegate makeButtonTappedForCellAtIndex:self.rowIndex];
+}
+
 @end

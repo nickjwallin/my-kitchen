@@ -8,10 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MakeRecipeProtocol <NSObject>
+
+- (void)makeButtonTappedForCellAtIndex:(NSInteger)index;
+
+@end
+
 @interface RecipeTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *recipeLabel;
-
+- (IBAction)makeButtonTapped:(id)sender;
 - (void)setLabelWithName:(NSString *)name withNumIngredients:(NSNumber *)numIngredients;
+
+@property (weak, nonatomic) IBOutlet UILabel *recipeLabel;
+@property (assign, nonatomic) NSInteger rowIndex;
+
+@property (weak, nonatomic) id <MakeRecipeProtocol> delegate;
+
+
 
 @end

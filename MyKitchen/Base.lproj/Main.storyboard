@@ -408,20 +408,40 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWk-dt-YCr" userLabel="Recipe Label">
-                                            <rect key="frame" x="8" y="11" width="584" height="21"/>
+                                            <rect key="frame" x="8" y="11" width="535" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wd2-Xw-bB5">
+                                            <rect key="frame" x="551" y="7" width="37" height="30"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="37" id="k7f-r8-txA"/>
+                                            </constraints>
+                                            <state key="normal" title="Make"/>
+                                            <connections>
+                                                <action selector="makeButtonTapped:" destination="2jb-7h-lmo" eventType="touchUpInside" id="vfy-x7-R1s"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <animations/>
                                     <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="wd2-Xw-bB5" secondAttribute="bottom" constant="-2" id="E0H-0U-xH3"/>
+                                        <constraint firstItem="wd2-Xw-bB5" firstAttribute="top" secondItem="KKQ-8B-Dhy" secondAttribute="topMargin" constant="-1" id="Vto-YQ-oDG"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="wd2-Xw-bB5" secondAttribute="trailing" constant="4" id="gt4-Mo-QxX"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="bWk-dt-YCr" secondAttribute="trailing" id="jBo-sb-xU8"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="bWk-dt-YCr" secondAttribute="bottom" constant="3" id="mPF-NT-SrE"/>
                                         <constraint firstItem="bWk-dt-YCr" firstAttribute="top" secondItem="KKQ-8B-Dhy" secondAttribute="topMargin" constant="3" id="nBH-Zh-ESd"/>
+                                        <constraint firstItem="wd2-Xw-bB5" firstAttribute="leading" secondItem="bWk-dt-YCr" secondAttribute="trailing" constant="8" id="pZI-gR-lXW"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="bWk-dt-YCr" secondAttribute="leading" id="yaj-qP-wf6"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="jBo-sb-xU8"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>

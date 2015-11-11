@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "MakeRecipeManager.h"
 
 @interface AppDelegate ()
+
+@property (strong) MakeRecipeManager *makeRecipeManager;
 
 @end
 
@@ -16,7 +19,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    _makeRecipeManager = [[MakeRecipeManager alloc] initWithManagedObjectContext:[self managedObjectContext]];
     return YES;
 }
 
@@ -40,6 +43,12 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Make Recipe Manager
+
+- (void)makeRecipeWithName:(NSString *)recipeName {
+    [_makeRecipeManager makeRecipeWithName:recipeName];
 }
 
 #pragma mark - Core Data stack

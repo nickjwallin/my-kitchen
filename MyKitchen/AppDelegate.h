@@ -19,6 +19,7 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+- (void)makeRecipeWithName:(NSString *)recipeName;
 
 @end
 

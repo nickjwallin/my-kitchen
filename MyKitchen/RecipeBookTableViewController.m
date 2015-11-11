@@ -8,6 +8,7 @@
 
 #import "RecipeBookTableViewController.h"
 #import "RecipeTableViewCell.h"
+#import "AppDelegate.h"
 
 @interface RecipeBookTableViewController () <MakeRecipeProtocol>
 
@@ -80,7 +81,10 @@
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                        style:UIAlertActionStyleDefault
                                                      handler:^(UIAlertAction * _Nonnull action) {
-                                                         // make the recipe!
+                                                         id delegate = [[UIApplication sharedApplication] delegate];
+                                                         if ([delegate respondsToSelector:@selector(makeRecipeWithName:)]) {
+                                                             [delegate makeRecipeWithName:recipeName];
+                                                         }
                                                      }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
                                                            style:UIAlertActionStyleCancel

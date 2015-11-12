@@ -25,6 +25,7 @@
 		01988AB11BF3AB1D00B0762F /* RecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988AB01BF3AB1D00B0762F /* RecipeTableViewCell.m */; };
 		01988AB41BF3B1FB00B0762F /* AddRecipeIngredientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988AB31BF3B1FB00B0762F /* AddRecipeIngredientViewController.m */; };
 		01988AB71BF4065500B0762F /* MakeRecipeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988AB61BF4065500B0762F /* MakeRecipeManager.m */; };
+		01988ABA1BF43A6F00B0762F /* ReadyToMakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01988AB91BF43A6F00B0762F /* ReadyToMakeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		01988AB31BF3B1FB00B0762F /* AddRecipeIngredientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecipeIngredientViewController.m; sourceTree = "<group>"; };
 		01988AB51BF4065400B0762F /* MakeRecipeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeRecipeManager.h; sourceTree = "<group>"; };
 		01988AB61BF4065500B0762F /* MakeRecipeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeRecipeManager.m; sourceTree = "<group>"; };
+		01988AB81BF43A6F00B0762F /* ReadyToMakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadyToMakeViewController.h; sourceTree = "<group>"; };
+		01988AB91BF43A6F00B0762F /* ReadyToMakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadyToMakeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,8 @@
 				01988AA41BF2AC3300B0762F /* PantryTableViewController.m */,
 				01089B4E1BF1A243005F7C5F /* PantryViewController.h */,
 				01089B4F1BF1A243005F7C5F /* PantryViewController.m */,
+				01988AB81BF43A6F00B0762F /* ReadyToMakeViewController.h */,
+				01988AB91BF43A6F00B0762F /* ReadyToMakeViewController.m */,
 				01988AAC1BF3AA3E00B0762F /* RecipeBookTableViewController.h */,
 				01988AAD1BF3AA3E00B0762F /* RecipeBookTableViewController.m */,
 				01988AAF1BF3AB1D00B0762F /* RecipeTableViewCell.h */,
@@ -329,6 +334,7 @@
 				01988AB71BF4065500B0762F /* MakeRecipeManager.m in Sources */,
 				01988AB11BF3AB1D00B0762F /* RecipeTableViewCell.m in Sources */,
 				01988A601BF2850900B0762F /* MyKitchen.xcdatamodeld in Sources */,
+				01988ABA1BF43A6F00B0762F /* ReadyToMakeViewController.m in Sources */,
 				01988AA51BF2AC3300B0762F /* PantryTableViewController.m in Sources */,
 				01089B471BF1A243005F7C5F /* main.m in Sources */,
 			);

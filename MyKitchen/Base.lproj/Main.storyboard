@@ -64,7 +64,7 @@
                                         <animations/>
                                         <state key="normal" title="Click here for ready-to-make food!"/>
                                         <connections>
-                                            <segue destination="qtL-ek-4ht" kind="presentation" id="Hh7-B8-7wB"/>
+                                            <segue destination="odm-CH-kBq" kind="presentation" id="s0R-7B-9HI"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't know what to make?" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwN-dI-t0f">
@@ -106,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--View Controller-->
+        <!--Ready-to-Make Recipes-->
         <scene sceneID="hvu-mp-aIy">
             <objects>
-                <viewController id="qtL-ek-4ht" sceneMemberID="viewController">
+                <viewController id="qtL-ek-4ht" customClass="ReadyToMakeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="92I-0p-wqK"/>
                         <viewControllerLayoutGuide type="bottom" id="ltW-dA-Ec2"/>
@@ -118,13 +118,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready-to-Make Recipes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7a-mj-BGG">
-                                <rect key="frame" x="155" y="20" width="290" height="33"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Qb-C3-7uP">
                                 <rect key="frame" x="20" y="253" width="560" height="95"/>
                                 <subviews>
@@ -173,30 +166,84 @@
                                 </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dDF-Aw-kuv">
-                                <rect key="frame" x="20" y="61" width="560" height="519"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeCell" id="5RQ-0p-NY8" customClass="RecipeTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5RQ-0p-NY8" id="OcT-lB-xsD">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oe3-WH-f2c">
+                                                    <rect key="frame" x="8" y="11" width="518" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWu-j5-hiE">
+                                                    <rect key="frame" x="534" y="7" width="50" height="30"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="yTH-30-zmB"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Make"/>
+                                                    <connections>
+                                                        <action selector="makeButtonTapped:" destination="5RQ-0p-NY8" eventType="touchUpInside" id="mxY-V8-t5F"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="leadingMargin" secondItem="oe3-WH-f2c" secondAttribute="leading" id="PFX-1l-ZWs"/>
+                                                <constraint firstItem="MWu-j5-hiE" firstAttribute="centerY" secondItem="OcT-lB-xsD" secondAttribute="centerY" id="PXW-5G-WCQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="MWu-j5-hiE" secondAttribute="trailing" constant="8" id="VA8-sf-ffS"/>
+                                                <constraint firstItem="MWu-j5-hiE" firstAttribute="leading" secondItem="oe3-WH-f2c" secondAttribute="trailing" constant="8" id="b8i-jW-Waz"/>
+                                                <constraint firstItem="oe3-WH-f2c" firstAttribute="centerY" secondItem="OcT-lB-xsD" secondAttribute="centerY" id="d4V-d3-9sM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="recipeLabel" destination="oe3-WH-f2c" id="wVX-dO-S1Y"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qtL-ek-4ht" id="pUE-XH-13K"/>
+                                    <outlet property="delegate" destination="qtL-ek-4ht" id="tCZ-zM-qAV"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="dDF-Aw-kuv" secondAttribute="leading" id="420-lY-c7e"/>
-                            <constraint firstItem="S7a-mj-BGG" firstAttribute="centerX" secondItem="eYt-gD-gu4" secondAttribute="centerX" id="5wN-5l-hhx"/>
-                            <constraint firstItem="S7a-mj-BGG" firstAttribute="top" secondItem="92I-0p-wqK" secondAttribute="bottom" id="9Q0-Kv-7xl"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="dDF-Aw-kuv" secondAttribute="leading" constant="20" id="420-lY-c7e"/>
                             <constraint firstAttribute="leadingMargin" secondItem="3Qb-C3-7uP" secondAttribute="leading" id="DyZ-Lx-OLw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3Qb-C3-7uP" secondAttribute="trailing" id="GVy-E9-QuR"/>
-                            <constraint firstItem="dDF-Aw-kuv" firstAttribute="top" secondItem="S7a-mj-BGG" secondAttribute="bottom" constant="8" id="GeE-ih-hPO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dDF-Aw-kuv" secondAttribute="trailing" id="ImI-yn-9oF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dDF-Aw-kuv" secondAttribute="trailing" constant="-20" id="ImI-yn-9oF"/>
                             <constraint firstItem="3Qb-C3-7uP" firstAttribute="centerY" secondItem="eYt-gD-gu4" secondAttribute="centerY" id="U14-L4-9H6"/>
                             <constraint firstItem="3Qb-C3-7uP" firstAttribute="centerX" secondItem="eYt-gD-gu4" secondAttribute="centerX" id="VbG-Gv-cOh"/>
-                            <constraint firstItem="ltW-dA-Ec2" firstAttribute="top" secondItem="dDF-Aw-kuv" secondAttribute="bottom" constant="20" id="etk-Y8-6Ep"/>
+                            <constraint firstItem="dDF-Aw-kuv" firstAttribute="top" secondItem="92I-0p-wqK" secondAttribute="bottom" id="eHB-Qr-Ocy"/>
+                            <constraint firstItem="ltW-dA-Ec2" firstAttribute="top" secondItem="dDF-Aw-kuv" secondAttribute="bottom" id="etk-Y8-6Ep"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Ready-to-Make Recipes" id="E5L-s7-AKg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hSz-Y4-ZZz">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="qtL-ek-4ht" id="hTR-cc-pij"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="dDF-Aw-kuv" id="H5r-G8-VVJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwa-Pr-O2x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1548" y="-320"/>
+            <point key="canvasLocation" x="2294" y="-320"/>
         </scene>
         <!--Pantry Table View Controller-->
         <scene sceneID="MZN-ip-HnP">
@@ -253,6 +300,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zB-Vi-6cE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1548" y="399"/>
+        </scene>
+        <!--Ready-to-Make Recipes Navigation Controller-->
+        <scene sceneID="CyE-Hj-cyD">
+            <objects>
+                <navigationController title="Ready-to-Make Recipes Navigation Controller" id="odm-CH-kBq" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jwg-bc-Inz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qtL-ek-4ht" kind="relationship" relationship="rootViewController" id="f6h-th-uUe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8t7-jd-E6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1548" y="-320"/>
         </scene>
         <!--Add Ingredient Navigation Controller-->
         <scene sceneID="UcX-c9-3zD">
@@ -557,17 +621,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWk-dt-YCr" userLabel="Recipe Label">
-                                            <rect key="frame" x="8" y="11" width="535" height="21"/>
+                                            <rect key="frame" x="8" y="11" width="518" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wd2-Xw-bB5">
-                                            <rect key="frame" x="551" y="7" width="37" height="30"/>
+                                            <rect key="frame" x="534" y="7" width="50" height="30"/>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="37" id="k7f-r8-txA"/>
+                                                <constraint firstAttribute="width" constant="50" id="k7f-r8-txA"/>
                                             </constraints>
                                             <state key="normal" title="Make"/>
                                             <connections>
@@ -579,16 +643,22 @@
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="wd2-Xw-bB5" secondAttribute="bottom" constant="-2" id="E0H-0U-xH3"/>
                                         <constraint firstItem="wd2-Xw-bB5" firstAttribute="top" secondItem="KKQ-8B-Dhy" secondAttribute="topMargin" constant="-1" id="Vto-YQ-oDG"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="wd2-Xw-bB5" secondAttribute="trailing" constant="4" id="gt4-Mo-QxX"/>
+                                        <constraint firstItem="bWk-dt-YCr" firstAttribute="centerY" secondItem="KKQ-8B-Dhy" secondAttribute="centerY" id="gCi-1r-oDQ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="wd2-Xw-bB5" secondAttribute="trailing" constant="8" id="gt4-Mo-QxX"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="bWk-dt-YCr" secondAttribute="trailing" id="jBo-sb-xU8"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="bWk-dt-YCr" secondAttribute="bottom" constant="3" id="mPF-NT-SrE"/>
                                         <constraint firstItem="bWk-dt-YCr" firstAttribute="top" secondItem="KKQ-8B-Dhy" secondAttribute="topMargin" constant="3" id="nBH-Zh-ESd"/>
+                                        <constraint firstItem="wd2-Xw-bB5" firstAttribute="centerY" secondItem="KKQ-8B-Dhy" secondAttribute="centerY" id="pLq-Ae-Uap"/>
                                         <constraint firstItem="wd2-Xw-bB5" firstAttribute="leading" secondItem="bWk-dt-YCr" secondAttribute="trailing" constant="8" id="pZI-gR-lXW"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="bWk-dt-YCr" secondAttribute="leading" id="yaj-qP-wf6"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="jBo-sb-xU8"/>
+                                            <exclude reference="mPF-NT-SrE"/>
+                                            <exclude reference="nBH-Zh-ESd"/>
+                                            <exclude reference="E0H-0U-xH3"/>
+                                            <exclude reference="Vto-YQ-oDG"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>

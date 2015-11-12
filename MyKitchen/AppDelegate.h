@@ -19,6 +19,8 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+
+#pragma mark - Make Recipe Manager
 - (void)makeRecipeWithName:(NSString *)recipeName;
 
 @end

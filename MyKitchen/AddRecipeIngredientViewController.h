@@ -10,6 +10,13 @@
 
 @protocol AddRecipeIngredientProtocol <NSObject>
 
+/**
+ *  Add the ingredient to the recipe. No Core Data stuff is
+ *  done until the entire recipe is saved.
+ *
+ *  @param amount Amount of the ingredient in the recipe
+ *  @param name   Name of the ingredient
+ */
 - (void)addRecipeIngredientWithAmount:(NSNumber *)amount withName:(NSString *)name;
 
 @end

@@ -84,6 +84,10 @@
 
 #pragma mark - Core Data
 
+/**
+ *  Save the recipe to Core Data. Handles saving both the Recipe
+ *  and the Ingredients, and sets up the Relationship between them.
+ */
 - (void)saveRecipeToCoreData {
     NSManagedObjectContext *context = [self managedObjectContext];
     NSManagedObject *newRecipe = [NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:context];

@@ -35,7 +35,6 @@
 
     if (!fetchError) {
         recipe = [result firstObject];
-        NSLog(@"got recipe with name %@", [recipe valueForKey:@"name"]);
     } else {
         NSLog(@"Error fetching recipe.");
         NSLog(@"%@, %@", fetchError, fetchError.localizedDescription);
@@ -44,7 +43,6 @@
 
     // get the ingredients of the recipe
     NSMutableSet *recipeIngredients = [recipe mutableSetValueForKey:@"ingredients"];
-    NSLog(@"got %@ ingredients for that recipe!", [NSNumber numberWithInteger:recipeIngredients.count]);
     NSMutableSet *ingredientNames = [[NSMutableSet alloc] init];
     for (NSManagedObject *recipeIngredient in recipeIngredients) {
         [ingredientNames addObject:[recipeIngredient valueForKey:@"name"]];

@@ -91,4 +91,61 @@
     }
 }
 
+- (NSArray *)recipesReadyToMake {
+    NSMutableArray *readyRecipes = [[NSMutableArray alloc] init];
+
+    // get all ingredients from "pantry"
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Ingredient"];
+    NSArray *pantryIngredients = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+
+    NSMutableDictionary *pantryDict = [[NSMutableDictionary alloc] init];
+    for (NSManagedObject *pantryIngredient in pantryIngredients) {
+        [pantryDict setValue:[pantryIngredient valueForKey:@"amount"] forKey:[pantryIngredient valueForKey:@"name"]];
+    }
+    NSArray *pantryIngredientNames = [pantryDict allKeys];
+
+    // get all recipes
+    fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Recipe"];
+    NSArray *recipes = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+
+    for (NSManagedObject *recipe in recipes) {
+        // get recipe ingredients
+        NSMutableSet *recipeIngredients = [recipe mutableSetValueForKey:@"ingredients"];
+        NSMutableDictionary *recipeDict = [[NSMutableDictionary alloc] init];
+        for (NSManagedObject *recipeIngredient in recipeIngredients) {
+            [recipeDict setValue:[recipeIngredient valueForKey:@"amount"] forKey:[recipeIngredient valueForKey:@"name"]];
+        }
+
+        // check if recipe ingredients are available in pantry
+        BOOL allIngredientsAvailable = YES;
+        NSArray *recipeIngredientNames = [recipeDict allKeys];
+        for (NSString *recipeIngredientName in recipeIngredientNames) {
+            BOOL sufficientAmountOfIngredient = YES;
+
+            // check if recipe ingredient available in pantry
+            if ([pantryIngredientNames containsObject:recipeIngredientName]) {
+                // check if there is enough of the ingredient in the pantry
+                if ([pantryDict valueForKey:recipeIngredientName] < [recipeDict valueForKey:recipeIngredientName]) {
+                    sufficientAmountOfIngredient = NO;
+                }
+            } else {
+                sufficientAmountOfIngredient = NO;
+            }
+
+            // if there isn't enough of one ingredient, we don't care about this recipe
+            if (!sufficientAmountOfIngredient) {
+                allIngredientsAvailable = NO;
+                break;
+            }
+        }
+
+        // this recipe has sufficient amounts of every recipe ingredient in the pantry
+        if (allIngredientsAvailable) {
+            [readyRecipes addObject:recipe];
+        }
+    }
+
+    return readyRecipes;
+}
+
 @end

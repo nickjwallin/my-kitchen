@@ -25,7 +25,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    // Grab the ingredients from Core Data
+    // Grab the recipes from Core Data
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Recipe"];
     self.recipes = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];

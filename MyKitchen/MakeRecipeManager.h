@@ -15,4 +15,6 @@
 
 - (void)makeRecipeWithName:(NSString *)recipeName;
 
+- (NSArray *)recipesReadyToMake;
+
 @end

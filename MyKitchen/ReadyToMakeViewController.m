@@ -12,7 +12,7 @@
 
 @interface ReadyToMakeViewController () <MakeRecipeProtocol>
 
-@property (strong) NSMutableArray *recipes;
+@property (strong) NSArray *recipes;
 
 @end
 
@@ -26,12 +26,19 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    // Grab the ingredients from Core Data
-    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Recipe"];
-    self.recipes = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
-    
-    [self.tableView reloadData];
+    // grab the ready-to-make recipes from Core Data
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate respondsToSelector:@selector(recipesReadyToMake)]) {
+        self.recipes = [delegate recipesReadyToMake];
+    }
+
+    // only show the table view if there are ready-to-make recipes
+    if (self.recipes.count > 0) {
+        [self.tableView setHidden:NO];
+        [self.tableView reloadData];
+    } else {
+        [self.tableView setHidden:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,6 +86,7 @@
                                                          id delegate = [[UIApplication sharedApplication] delegate];
                                                          if ([delegate respondsToSelector:@selector(makeRecipeWithName:)]) {
                                                              [delegate makeRecipeWithName:recipeName];
+                                                             [self dismissViewControllerAnimated:YES completion:nil];
                                                          }
                                                      }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
@@ -87,18 +95,6 @@
     [alert addAction:okAction];
     [alert addAction:cancelAction];
     [self presentViewController:alert animated:YES completion:nil];
-}
-
-#pragma mark - Core Data
-
-- (NSManagedObjectContext *)managedObjectContext
-{
-    NSManagedObjectContext *context = nil;
-    id delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)]) {
-        context = [delegate managedObjectContext];
-    }
-    return context;
 }
 
 @end

@@ -22,6 +22,7 @@
 
 #pragma mark - Make Recipe Manager
 - (void)makeRecipeWithName:(NSString *)recipeName;
+- (NSArray *)recipesReadyToMake;
 
 @end
 

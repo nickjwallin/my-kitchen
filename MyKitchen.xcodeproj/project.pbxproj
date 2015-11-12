@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		01089B471BF1A243005F7C5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01089B461BF1A243005F7C5F /* main.m */; };
 		01089B4A1BF1A243005F7C5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01089B491BF1A243005F7C5F /* AppDelegate.m */; };
-		01089B4D1BF1A243005F7C5F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01089B4C1BF1A243005F7C5F /* HomeViewController.m */; };
-		01089B501BF1A243005F7C5F /* PantryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01089B4F1BF1A243005F7C5F /* PantryViewController.m */; };
 		01089B531BF1A243005F7C5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01089B511BF1A243005F7C5F /* Main.storyboard */; };
 		01089B551BF1A243005F7C5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01089B541BF1A243005F7C5F /* Assets.xcassets */; };
 		01089B581BF1A243005F7C5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01089B561BF1A243005F7C5F /* LaunchScreen.storyboard */; };
@@ -50,10 +48,6 @@
 		01089B461BF1A243005F7C5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		01089B481BF1A243005F7C5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		01089B491BF1A243005F7C5F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		01089B4B1BF1A243005F7C5F /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		01089B4C1BF1A243005F7C5F /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		01089B4E1BF1A243005F7C5F /* PantryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PantryViewController.h; sourceTree = "<group>"; };
-		01089B4F1BF1A243005F7C5F /* PantryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PantryViewController.m; sourceTree = "<group>"; };
 		01089B521BF1A243005F7C5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01089B541BF1A243005F7C5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01089B571BF1A243005F7C5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -141,16 +135,12 @@
 				01988AAA1BF2F29500B0762F /* AddRecipeViewController.m */,
 				01988AB21BF3B1FB00B0762F /* AddRecipeIngredientViewController.h */,
 				01988AB31BF3B1FB00B0762F /* AddRecipeIngredientViewController.m */,
-				01089B4B1BF1A243005F7C5F /* HomeViewController.h */,
-				01089B4C1BF1A243005F7C5F /* HomeViewController.m */,
 				01988AA61BF2B11D00B0762F /* IngredientTableViewCell.h */,
 				01988AA71BF2B11D00B0762F /* IngredientTableViewCell.m */,
 				01988AB51BF4065400B0762F /* MakeRecipeManager.h */,
 				01988AB61BF4065500B0762F /* MakeRecipeManager.m */,
 				01988AA31BF2AC3300B0762F /* PantryTableViewController.h */,
 				01988AA41BF2AC3300B0762F /* PantryTableViewController.m */,
-				01089B4E1BF1A243005F7C5F /* PantryViewController.h */,
-				01089B4F1BF1A243005F7C5F /* PantryViewController.m */,
 				01988AB81BF43A6F00B0762F /* ReadyToMakeViewController.h */,
 				01988AB91BF43A6F00B0762F /* ReadyToMakeViewController.m */,
 				01988AAC1BF3AA3E00B0762F /* RecipeBookTableViewController.h */,
@@ -324,11 +314,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				01988AA81BF2B11D00B0762F /* IngredientTableViewCell.m in Sources */,
-				01089B501BF1A243005F7C5F /* PantryViewController.m in Sources */,
 				01988AAB1BF2F29500B0762F /* AddRecipeViewController.m in Sources */,
 				01089B4A1BF1A243005F7C5F /* AppDelegate.m in Sources */,
 				01988A5D1BF27EB100B0762F /* AddIngredientViewController.m in Sources */,
-				01089B4D1BF1A243005F7C5F /* HomeViewController.m in Sources */,
 				01988AAE1BF3AA3E00B0762F /* RecipeBookTableViewController.m in Sources */,
 				01988AB41BF3B1FB00B0762F /* AddRecipeIngredientViewController.m in Sources */,
 				01988AB71BF4065500B0762F /* MakeRecipeManager.m in Sources */,
